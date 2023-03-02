@@ -131,7 +131,7 @@ jobs:
           (cd ipaDown; find . -name "*.ipa" -not -size +1879048192b -exec cp -r {} ../ipaDown_split \;)
         shell: bash
         
-       - name: Pushing to release
+      - name: Pushing to release
         if: ${{ steps.operation.outputs.needIPARelease == 1 }}
         uses: ncipollo/release-action@v1.12.0
         with:
